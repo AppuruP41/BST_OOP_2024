@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oop.ict.project.gui.ScreenController">
+   <children>
+      <FlowPane>
+         <children>
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0">
+               <bottom>
+                  <HBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="inputNodeKey" prefHeight="40.0" prefWidth="100.0" promptText="Key">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#createPressed" prefHeight="40.0" prefWidth="90.0" text="Create" />
+                        <Button mnemonicParsing="false" onAction="#insertPressed" prefHeight="40.0" prefWidth="90.0" text="Insert" />
+                        <Button mnemonicParsing="false" onAction="#deletePressed" prefHeight="40.0" prefWidth="90.0" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#updatePressed" prefHeight="40.0" prefWidth="90.0" text="Update" />
+                        <Button mnemonicParsing="false" onAction="#searchPressed" prefHeight="40.0" prefWidth="90.0" text="Search" />
+                        <MenuButton mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="Traverse">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#preorderPressed" text="Preorder" />
+                            <MenuItem mnemonicParsing="false" onAction="#postorderPressed" text="Postorder" />
+                          </items>
+                        </MenuButton>
+                        <Button layoutX="855.0" layoutY="15.0" mnemonicParsing="false" onAction="#backPressed" prefHeight="40.0" prefWidth="70.0" text="Back" />
+                     </children>
+                  </HBox>
+               </bottom>
+               <top>
+                  <Label fx:id="currentTreeName" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="287.0" text="Visualization " textAlignment="CENTER" textFill="#080fcc" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone />
+                     </effect>
+                  </Label>
+               </top>
+               <center>
+                  <BorderPane fx:id="screenContainer" prefHeight="200.0" BorderPane.alignment="CENTER" />
+               </center>
+               <right>
+                  <TextArea fx:id="textArea" editable="false" maxHeight="283.0" prefHeight="283.0" prefWidth="150.0" wrapText="true" BorderPane.alignment="TOP_LEFT">
+                     <BorderPane.margin>
+                        <Insets right="10.0" />
+                     </BorderPane.margin>
+                  </TextArea>
+               </right>
+               <left>
+                  <VBox prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+                     <children>
+                     	<Button maxWidth="92.0" mnemonicParsing="false" onAction="#undoPressed" prefHeight="40.0" prefWidth="92.0" text="Undo">
+                           <VBox.margin>
+                              <Insets top="250.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button maxWidth="92.0" mnemonicParsing="false" onAction="#redoPressed" prefHeight="40.0" prefWidth="92.0" text="Redo" />
+                        <Button fx:id="pauseBtn" mnemonicParsing="false" onAction="#pausePressed" prefHeight="40.0" prefWidth="90.0" text="Pause">
+                           <VBox.margin>
+                              <Insets top="80.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="resumeBtn" mnemonicParsing="false" onAction="#resumePressed" prefHeight="40.0" prefWidth="90.0" text="Resume" />
+                     </children>
+                  </VBox>
+               </left>
+            </BorderPane>
+         </children>
+      </FlowPane>
+      <TextArea fx:id="pesudoArea" editable="false" prefHeight="200.0" prefWidth="200.0">
+         <font>
+            <Font size="15.0" />
+         </font></TextArea>
+   </children>
+</VBox>
